@@ -19,4 +19,4 @@ A dynamic and user-friendly website that allows users to browse, adopt, and lear
 - **Let and Const**: For block-scoped variable declarations.
 
 ## Live link to the deployed project
-- 
+# [https://peddyadoptions.netlify.app/](https://peddyadoptions.netlify.app/)

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B10A6</title>
+
+    <link rel="shortcut icon" href="images/logo.webp" type="image/x-icon" />
+
+    <!-- DaisyUI + Tailwind CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Fontawesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/bbfc4be646.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+    />
+
+    <!-- Vanila CSS -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+      .lato {
+        font-family: "Lato", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="lato">
+    <header class="">
+      <nav
+        class="container lg:mt-5 flex justify-between items-center p-4 mx-auto lg:w-[85%]"
+      >
+        <div class="flex items-center gap-1">
+          <img class="lg:w-10 p-1" src="images/logo.webp" alt="" />
+          <h1 class="font-black lg:text-3xl text-2xl">Peddy</h1>
+        </div>
+        <div class="hidden pr-[100px] md:block space-x-7 font-normal text-base">
+          <a class="" href="">Home</a>
+          <a href="">Shop</a>
+          <a href="">Contact</a>
+        </div>
+        <div class="text-2xl">
+          <i class="fa-thin fa-circle-user fa-lg"></i>
+        </div>
+      </nav>
+      <nav>
+        <div class="text-center text-white pt-5 space-x-3 hidden">
+          <a class="bg-[#0E7A81] p-2 rounded-full" href="">Home</a>
+          <a class="bg-[#0E7A81] p-2 rounded-full" href="">Shop</a>
+          <a class="bg-[#0E7A81] p-2 rounded-full" href="">Contact</a>
+        </div>
+      </nav>
+      <section class="mx-auto w-[85%] lg:mb-24">
+        <div class="hero min-h-screen">
+          <div class="hero-content text-center">
+            <div class="">
+              <p class="text-[#13131399]">Bringing Families Together ❤️‍🔥</p>
+              <h1
+                class="pt-8 md:w-[70%] mx-auto text-3xl lg:text-5xl font-black"
+              >
+                Your Path to Adoption Starts Here
+              </h1>
+              <p class="py-6 md:w-[70%] mx-auto">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+              </p>
+              <button id="view-more-button"
+                class="btn bg-[#0E7A81] lg:text-lg btn-primary hover:bg-slate-500 py-0 px-5 font-bold text-white border-none"
+              >
+                View More
+              </button>
+              <img
+                class="mt-10 md:w-[70%] mx-auto"
+                src="images/pet.webp"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <section id="adopt-your-best-friend-section" class="mx-auto text-center w-[85%] md:my-12 lg:mb-24">
+        <h1 class="text-2xl text-[#131313] font-black lg:text-4xl pt-10">
+          Adopt Your Best Friend
+        </h1>
+        <p class="text-[#131313B3] text-sm lg:text-base py-6">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout. The point of
+          using Lorem Ipsum is that it has a.
+        </p>
+        <div
+          id="categories-button"
+          class="grid grid-cols-2 md:grid-cols-4 gap-5 pt-10"
+        >
+          <!-- <button class="btn font-extrabold lg:h-20 lg:text-lg"><img class="w-7 lg:w-10 mr-2" src="https://i.ibb.co.com/c8Yp1y7/dog.png" alt=""> Dogs</button> -->
+        </div>
+
+        <div class="py-11 flex justify-between items-center px-1">
+          <p class="font-black lg:text-2xl">Best Deal For You</p>
+          <button
+            id="sort-price"
+            class="btn lg:text-lg bg-[#0E7A81] hover:bg-slate-500 py-0 px-5 font-bold text-white border-none"
+          >
+            Sort by Price
+          </button>
+        </div>
+      </section>
+
+      <section class="mx-auto text-center w-[85%] my-12 lg:my-24">
+        <section
+          class="grid md:grid-cols-2 lg:grid-cols-4 justify-items-center space-y-5 lg:space-y-0"
+        >
+          <div
+            id="loading-spinner"
+            class="hidden md:col-span-2 lg:col-span-3 text-center pt-5 lg:pt-0 w-[85%] m-auto"
+          >
+            <span class="loading loading-spinner text-accent w-10"></span>
+          </div>
+          <!-- no info -->
+          <div
+            id="no-info"
+            class="hidden md:col-span-2 lg:col-span-3 text-center p-5 w-[85%] bg-[#13131308] border-[1.5px] border-[#0b0b0b27] rounded-2xl card m-auto"
+          >
+            <img class="m-auto w-20 md:w-36" src="images/error.webp" alt="" />
+            <h1 class="text-2xl font-bold pt-4 pb-3">
+              No Information Available
+            </h1>
+            <p class="lg:text-base text-xs">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout. The
+              point of using Lorem Ipsum is that it has a.
+            </p>
+          </div>
+          <!-- allpets -->
+          <div
+            id="allpets"
+            class="hidden md:col-span-2 lg:col-span-3 justify-items-center gap-5 lg:space-x-2 lg:gap-5 md:gap-5 md:grid-cols-2 lg:grid-cols-3"
+          >
+            <!-- <div
+              class=" card bg-base-100 border-[1px] border-[#1313131A] w-[300px] shadow-xl h-fit"
+            >
+              <figure class="px-5 pt-5  h-[173px]">
+                <img
+                  src="https://i.ibb.co.com/85w4kSt/pet-17.jpg"
+                  alt=""
+                  class="rounded-xl h-full w-full object-cover"
+                />
+              </figure>
+              <div class="flex flex-col gap-5 p-5">
+                <div class="text-left px-1">
+                  <h3 class="font-bold text-xl pb-2">Pet Name</h3>
+                  <div class="text-[#131313B3] space-y-1">
+                    <p class="">
+                      <i class="fa-duotone fa-solid fa-grid-2 fa-lg pr-1"></i>
+                      Breed: Golder retriever
+                    </p>
+                    <p class="]">
+                      <i class="fa-light fa-calendar fa-lg pr-2"></i> Birth:
+                      2024
+                    </p>
+                    <p class="]">
+                      <i class="fa-regular fa-mercury fa-lg pr-2"></i> Gender:
+                      Female
+                    </p>
+                    <p class="">
+                      <i class="fa-regular fa-tag fa-lg pr-2"></i> Price : 199$
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="card-actions justify-center items-center pt-4 border-t-2 space-x-2"
+                >
+                  <button
+                    class="btn font-extrabold hover:bg-slate-500 py-0 px-5 border-[#0E7A8126]"
+                  >
+                    <i
+                      class="fa-light fa-thumbs-up fa-bounce fa-lg"
+                      style="color: #000000"
+                    ></i>
+                  </button>
+                  <button
+                    class="btn text-[#0E7A81] hover:bg-slate-500 py-0 px-5 font-bold border-[1px] border-[#0E7A8126]"
+                  >
+                    Adopt
+                  </button>
+                  <button
+                    class="btn text-[#0E7A81] hover:bg-slate-500 py-0 px-5 font-bold border-[#0E7A8126]"
+                  >
+                    Details
+                  </button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <!-- clicked pets -->
+          <div class="lg:col-span-1 md:col-span-2">
+            <div
+              id="liked-pets"
+              class="card bg-base-100 border-[1px] border-[#1313131A] w-[300px] h-[158px] grid grid-cols-2 gap-4 p-4 shadow-xl"
+            >
+              <!-- <figure class="w-[125px] h-[125px]">
+              <img
+                src="https://i.ibb.co.com/zZHPJNh/pet-16.jpg"
+                alt="Shoes"
+                class="rounded-xl w-full h-full object-cover"
+              />
+            </figure> -->
+            </div>
+            <div id="modals">
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer class="footer bg-black">
+      <section
+        class="footer lg:w-[85%] mx-auto justify-between text-base-content p-10 space-y-5"
+      >
+        <nav class="text-[#FFFFFF99]">
+          <div class="flex items-center gap-1 pb-5">
+            <img class="lg:w-10 p-1" src="images/logo.webp" alt="" />
+            <h1 class="text-white font-black lg:text-3xl text-2xl">Peddy</h1>
+          </div>
+          <a class="link link-hover"
+            >Location: av. Washington 165, NY CA 54003</a
+          >
+          <a class="link link-hover"> Phone: +31 85 964 47 25</a>
+          <a class="link link-hover">Email: info@yourdomain.com </a>
+          <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+        </nav>
+        <nav class="text-[#FFFFFF99]">
+          <h6 class="font-bold text-white">Useful Links</h6>
+          <a class="link link-hover">About us</a>
+          <a class="link link-hover">Contact</a>
+          <a class="link link-hover">Animals</a>
+          <a class="link link-hover">Foumdation</a>
+        </nav>
+        <nav>
+          <h6 class="font-bold text-white">Drop a Message</h6>
+          <fieldset class="form-control">
+            <div class="join">
+              <input
+                type="text"
+                placeholder="Enter your email"
+                class="input w-40 input-bordered join-item"
+              />
+              <button class="btn btn-primary bg-[#0E7A81] join-item">
+                Subscribe
+              </button>
+            </div>
+          </fieldset>
+        </nav>
+      </section>
+    </footer>
+    <footer class="footer bg-black text-base-content px-10 py-4">
+      <nav
+        class="place-self-center md:w-[85%] mx-auto md:place-self-center md:justify-self-start"
+      >
+        <div class="grid grid-flow-col gap-4">
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              ></path>
+            </svg>
+          </a>
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              ></path>
+            </svg>
+          </a>
+          <a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </footer>
+    <script src="script.js/index.js"></script>
+  </body>
+</html>
